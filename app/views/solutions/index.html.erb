@@ -1,0 +1,29 @@
+<h1>Listing solutions</h1>
+
+<table class="table table-condensed table-bordered table-striped">
+  <tr>
+    <th>id</th>
+    <th>Username</th>
+    <th>Problem</th>
+    <th>Language</th>
+    <th>Source</th>
+    <th>State</th>
+  </tr>
+
+<% @solutions.each do |solution| %>
+<%  next if solution.user != current_user %>
+
+  <tr>
+    <td><%= solution.id %></td>
+    <td><%= solution.user.username %></td>
+    <td><%= solution.problem.title %></td>
+    <td><%= solution.language %></td>
+    <td><%= link_to solution.src_file_name, solution.src.url %></td>
+    <td><%= solution.state.name if solution.state %></td>
+  </tr>
+<% end %>
+</table>
+
+<br/>
+
+<%= link_to 'New Solution', new_user_solution_path ,  :class => 'btn' %>

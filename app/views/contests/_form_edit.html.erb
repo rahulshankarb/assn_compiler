@@ -1,0 +1,19 @@
+<div class="row">
+<%= simple_form_for @contest, :html => {:multipart => true, :novalidate => false} do |f| %>
+
+
+<div class="span4">
+  <%= f.error_notification %>
+  <br>
+  <%= f.input :name, :input_html =>{:required => "required"} %>
+  <%= f.input :start_date , :as => :string ,:input_html =>{:required => "required"}%>
+  <%= f.input :duration, :placeholder => 'In hours' ,:input_html =>{:required => "required",  :class => 'input-mini', :min=>"1" , :max=>"24"}%>
+  <%= f.association :problems, as: :check_boxes, :collection => Problem.active(:order => 'title'), :label => 'Select Problems'  %>
+ <br><br>
+  <%= f.button :submit, :class => 'btn btn-primary'%>
+
+</div>
+
+ <% end %>
+</div>
+ <br>

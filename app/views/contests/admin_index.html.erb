@@ -1,0 +1,49 @@
+<h1>Admin</h1>
+
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Start date</th>
+    <th>Duration</th>
+ <!--   <th>Active</th>
+    <th>Status</th>             -->
+    <th>Problems</th>
+    <th>Teams</th>
+  <!--  <th>Type</th> -->
+
+    <th>Admin</th>
+  </tr>
+
+<% @contests.each do |contest| %>
+  <tr>
+    <td><%= contest.name %></td>
+    <td><%= contest.start_date.strftime("%I:%M%p")  %></td>
+    <td><%= contest.duration %> hours</td>
+ <!--   <td><%= contest.active? %></td>
+    <td><%= contest.status %></td>             -->
+    <td><ul>
+        <%contest.problems.each do |problem|%>
+            <li> <%= problem.title %> </li>
+        
+       <% end %>
+        </ul>
+     </td>
+      <td><ul>
+        <%contest.users.each do |user|%>
+            <li> <%= user.username %> </li>
+        
+       <% end %>
+        </ul>
+     </td>
+  <!--  <td><%= contest.type %></td>                          -->
+    <td><%= link_to 'Edit', edit_contest_path(contest) , :class =>"btn " %>
+        <%= link_to 'Delete', contest, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"btn btn-danger" %>
+        <%=  link_to "Enter", admin_contest_path(contest),  :class => 'btn btn-success' %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Contest', new_contest_path, :class =>"btn btn-primary" %>

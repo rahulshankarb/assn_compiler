@@ -1,0 +1,27 @@
+<table class="table table-condensed table-bordered table-striped">
+  <tr>
+    <th><%= t "contests.Title" %></th>
+    <th><%= t "contests.Body" %></th>
+    <th><%= t "contests.Input" %></th>
+    <th><%= t "contests.Output" %></th>
+    <th><%= t "contests.Time_Limit" %></th>
+    <th><%= t "contests.Judge_File_Size" %></th>
+
+  </tr>
+
+<% @contest.problems.each do |problem| %>
+  <tr>
+    
+    <td><%= problem.title %></td>
+    <td><%= link_to problem.body_file_name,  problem.body.url %></td>
+    <td><%= link_to problem.input_file_name,  problem.input.url %></td>
+    <td><%= link_to problem.output_file_name,  problem.output.url %></td>
+    <td><%= problem.time %>s</td>
+    <td><%= problem.size %>k</td>
+    
+
+  </tr>
+<% end %>
+</table>
+
+

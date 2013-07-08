@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+
+
+
+
+<p>Title: <%= link_to @problem.title,  @problem.body.url %></p>
+<p>Input: <%= link_to @problem.input_file_name,  @problem.input.url %></p>
+<p>Output: <%= link_to @problem.output_file_name,  @problem.output.url %></p>
+
+
+
+
+<%= link_to 'Edit', edit_problem_path(@problem),  :class => 'btn' %> |
+<%= link_to 'Back', problems_path ,  :class => 'btn'%>

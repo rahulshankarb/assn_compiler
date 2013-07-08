@@ -1,0 +1,25 @@
+<div class="hero-unit">
+   		<ul>
+			<li><%= t "contests.local_time" %>: <span id="local_time"></span> </li>
+			<li>Time Elapsed: <span id="elapsed_time"></span> </li>
+			<li>Time Remaining: <span id="remaining_time"></span> </li>
+			<li>Number of Students:  <%=@contest.users.count%></li>
+			<li>Number of problems:  <%=@contest.problems.count%></li>
+			<li>Number of Solutions uploaded:  <%=@contest.solutions.count%></li>
+			<li>Number of Solutions accepted:  <%=@contest.solutions.solved.count %></li>
+		</ul>
+
+		<%= link_to 'Active', active_path(@contest),  :class => 'btn btn-info   btn-large', :id => "activeBtn" unless @contest.active %>
+
+		<%= link_to 'Finalize', finalize_path(@contest),  :class => 'btn btn-inverse  btn-large', :id => "finalizeBtn" if @contest.status=="start" %>
+
+
+		<%= link_to 'Start', start_path(@contest),  :class => 'btn btn-success btn-large' , :id => "startBtn"if @contest.status=="initial"%>
+
+
+
+
+
+
+		
+</div>

@@ -1,0 +1,36 @@
+
+
+
+	<%= simple_form_for ([@user, @solution]), :html => {:multipart => true} do |f| %>
+		<a href="#myModal" role="button" class="btn btn-primary" data-toggle="modal">New Submission</a>
+		
+
+		<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-header">
+	    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	    <h3 id="myModalLabel">New Submission</h3>
+	  </div>
+	  <div class="modal-body">
+	 
+
+
+
+	  <%= f.error_notification %>
+	  
+	  
+	  <%= f.text_field :user_id, :type => :hidden,  :value => "#{@user.id}" %>
+	  <%= f.text_field :contest_id, :type => :hidden,  :value => "#{@contest.id}" %>
+	  <%= f.association :problem, :collection => @contest.problems(:order => 'title') , :include_blank => false, :label => ' Problem'  %>
+	  <%= f.input :language, :collection => ["Java", "C++"],  :label => 'language', :include_blank => false  %>
+      <%= f.input :src, :as => :file, :label => "Source file" %>
+  <!--    <%= f.file_field :src, :label => "Source file" %>     -->
+	  
+
+	  </div>
+	  <div class="modal-footer">
+	    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+	    <%= f.button :submit  , "Submit" ,  :class => 'btn btn-primary', data: { confirm: 'Are you sure?' } %>
+	    
+	  </div>
+	  </div>
+      <% end %>

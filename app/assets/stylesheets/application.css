@@ -1,0 +1,68 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require jquery.countdown
+ *= require_self
+ *= require jquery-ui/redmond
+ *= require_tree .
+ *= require jquery.ui.datepicker
+ *= require chosen.css 
+ *= require jackedup
+ */
+
+
+/* css for timepicker */
+#ui-datepicker-div {z-index: 10 !important;}
+.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
+.ui-timepicker-div dl { text-align: left; }
+.ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; }
+.ui-timepicker-div dl dd { margin: 0 10px 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+
+
+#remaining_time{
+	width: 170px;
+	border-bottom: 50px;
+
+}
+
+#logo{
+  float: right;
+}
+
+#title{
+  float: left;
+  margin: 70px;
+}
+
+#ppal{
+  height: 200px;
+
+}
+
+#pdfLink{
+ 
+ text-align: right;
+}
+
+#autoImport{
+	float: right;
+}
+
+.fields-modal{
+  width: 250px;
+  float: left;
+}
+.help-modal{
+  width: 50px;
+  float: right;
+}
+

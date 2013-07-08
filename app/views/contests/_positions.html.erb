@@ -1,0 +1,33 @@
+<table id="results" class="table table-condensed table-bordered table-striped">
+	<tr>
+		<th><%= t "contests.Place" %></th>
+		<th><%= t "contests.team" %></th>
+		<% @contest.problems.each do |problem| %>
+		<th><%= link_to problem.title,  problem.body.url %></th>
+		<% end %>
+		<th><%= t "contests.Total_Solved" %></th>
+	</tr>
+	<% place= 0 %>	
+	<% @contest.team_scores.each do |team_score| %>
+	<% place+=1 %>
+	<tr>
+		<td><%= place %></td>
+		<td><%= team_score.username %></td>
+
+		<% team_score.problems.each do |problem| %>
+		<td><%= problem %></td>
+		<% end %>
+
+		<td><%= team_score.count %> / <%=@contest.problems.count %> (<%=team_score.score%>)</td>
+
+	</tr>
+	<% end %>
+</table>
+
+
+
+
+
+
+
+

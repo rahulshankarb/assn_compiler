@@ -1,0 +1,5 @@
+module ContestsHelper
+
+
+	
+end

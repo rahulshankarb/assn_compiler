@@ -1,0 +1,70 @@
+<script src="/assets/humane.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+
+    PrivatePub.subscribe("/contest/<%=@contest.id%>/user/<%=current_user.id%>", function(data, channel){
+  
+   // console.log(data);
+
+
+    
+
+    $('#loading_img').fadeOut();
+    $('#mySolutions tr:nth-child(2) td:last-child span').fadeOut();  
+
+    $('#mySolutions tr:nth-child(2) td:last-child span').text(data.state_name);
+
+    if(data.state =="AC"){ 
+    
+      $('#mySolutions tr:nth-child(2) td:last-child span').removeClass('label-info').addClass('label-success');
+        humane.success(data.state_name);
+      $('#mySolutions tr:nth-child(2) td:nth-child(5)').text(data.file_size);
+      $('#mySolutions tr:nth-child(2) td:nth-child(6)').text(data.run_time);
+      }
+      
+
+    else
+    if(data.state =="WA"){
+
+      $('#mySolutions tr:nth-child(2) td:last-child span').removeClass('label-info').addClass('label-important');
+      humane.error(data.state_name);
+
+      }
+
+    else
+    if(data.state =="TL") {
+     
+      $('#mySolutions tr:nth-child(2) td:last-child span').removeClass('label-info').addClass('label-warning');
+
+      humane.info(data.state_name);
+     }
+
+    else
+    if(data.state =="CE")     {
+     
+      $('#mySolutions tr:nth-child(2) td:last-child span').removeClass('label-info').addClass('label-inverse');
+      humane.info(data.state_name);
+     
+    }
+    
+
+$('#mySolutions tr:nth-child(2) td:last-child span').fadeIn();
+  /*
+  console.log("init");
+  $('#results').fadeOut(function(){
+  $('#results').html("<%= j render('contests/positions') %>"); 
+  $('#results').fadeIn();
+  });
+  console.log("end");
+*/
+
+
+  var t=setTimeout(function(){location.reload()},4000)
+  
+  
+
+});
+
+</script>
+
+

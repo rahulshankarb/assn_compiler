@@ -1,0 +1,93 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+# <%= t "contests.name" %>
+en:
+  general: #<%= t "general.edit" %>
+   enter: Enter
+   register: Register
+   back: Back
+   edit: Edit
+   delete: Delete
+   admin: Admin
+   are_you_sure: Are you sure
+   Login: Login
+   Username: Username
+   Password: Password
+   Contests: Contestame
+   Register: Register
+   Team_Name: Team Name
+   Person: Person
+   Listing_Teams: Listing Teams
+   Members: Members
+   Editing_Admin_Account: Editing Admin Account
+   Editing_Team: Editing Team
+  about:
+   title: About Verifier
+   description: "Verifier is an online judge result of a research project grade in Politecnico Jaime Isaza Cadavid, performs validations  in such algorithms of programming contests following the standards of the ACM-ICPC. Apart from that offers the possibility to qualify an algorithm based on four metrics:"
+   metric1: Validate
+   metric2: Run Time
+   metric3: Source File Size
+   foot: "The project was complete by:"
+   author: Juan Pablo Cano and Luis Edimerchk Laverde
+   advisedby: Advised by Sandra P. Mateus Santiago
+  contests: # <%= t "contests.xxx" %>
+   new: New Contest
+   name: Name
+   start_date: Start date
+   duration: Duration
+   active: Active
+   problems: Problems
+   teams: Teams
+   state: Status
+   action: Action
+   wait_msg: Wait for the start date
+   status: Status
+   problems: Problems
+   teams_registered: Teams Registered
+   admin_contests: Admin contests
+   team_name: Team Name
+   email: Email
+   members: Members
+   team: Team
+   problem: Problem
+   language: Language
+   source: Source
+   time_remaining: Time Remaining
+   not_started: "The contest is not started yet..."
+   local_time: Local time
+   start_time: Start time
+   teams_registered: Teams Registered
+   all_solutions: All Solutions
+   solutions_accepted: Solutions Accepted
+   Percentages_for_validation: Percentages for validation
+   make_sure_that: make sure that the sum of all percentages is 100
+   Place: Place
+   Total_Solved: Total Solved
+   Title: Title
+   Body: Body
+   Input: Input
+   Output: Output
+   Time_Limit: Time Limit
+   Judge_File_Size: Judge File Size
+   Local_Time: Local Time
+   Time_Elapsed: Time Elapsed
+   File_Size: File Size
+   Memory_Usage: Memory Usage
+   Run_Time: "Run Time (Seconds)"
+   Acronym: Acronym
+   Listing_states: Listing states 
+   Please_comeback_at: Please comeback at
+   The_contest_is_over: The contest is over...
+   Final_Positions: Final Positions
+   Judge_Solutions: Judge Solutions
+   My_Submissions: My Submissions
+   type: Type
+  problems: # <%= t "problems.xxx" %>
+   Listing_problems: Listing problems
+   Title: Title
+   Body: Body
+   Input: Input
+   Output: Output
+   New_problem: New problem
+  solutions: # <%= t "solutions.xxx" %>
+   New_Submission: New Submission

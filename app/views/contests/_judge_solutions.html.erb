@@ -1,0 +1,11 @@
+<table class="table table-condensed table-bordered table-striped">
+      <tr>
+
+        <% @contest.problems.each do |problem| %>
+          <th>
+          	<%= link_to problem.title,  problem.judgeSolution.url %>
+          </th>
+        <% end %>
+        
+</table>
+

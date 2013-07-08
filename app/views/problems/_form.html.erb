@@ -1,0 +1,15 @@
+<%= simple_form_for @problem, :html => {:multipart => true, :novalidate => false} do |f| %>
+
+  <%= f.error_notification %>
+  <%= f.input :title, :input_html =>{:required => "required"} %>
+  <%= f.input :time, :placeholder => 'in seconds', :label => "Time Limit",:input_html =>{:required => "required",:min=>"1", :max=>"5", :class => 'input-small'} %>
+  <%= f.input :body, :as => :file, :label => "Body" ,
+  		 :input_html =>{:required => "required", :accept=>"application/pdf"} %>
+
+  <%= f.input :input, :as => :file, :label => "Input File", :input_html =>{:required => "required"}%>
+ <%= f.input :output, :as => :file, :label => "Output File", :input_html =>{:required => "required"}%>
+ <%= f.input :judgeSolution, :as => :file, :label => "Judge Solution File", :input_html =>{:required => "required"}%>
+ 
+  
+  <%= f.button :submit %>
+<% end %>

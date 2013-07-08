@@ -1,0 +1,41 @@
+<h1> <%= t "problems.Listing_problems" %></h1>
+
+<table class="table table-condensed table-bordered table-striped">
+  <tr>
+    <th>Problem</th>
+ <!--   <th><%= t "problems.Body" %></th>
+    <th><%= t "problems.Input" %></th>
+    <th><%= t "problems.Output" %></th>         -->
+    <th>Time Limit</th>
+    <th>Ideal File Size</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+
+<% @problems.each do |problem| %>
+  <tr>
+    
+    <td><%= problem.title %></td>
+<!--    <td><%= link_to problem.body_file_name,  problem.body.url %></td>
+    <td><%= link_to problem.input_file_name,  problem.input.url %></td>
+    <td><%= link_to problem.output_file_name,  problem.output.url %></td>                 -->
+    <td><%= problem.time %> s</td>
+    <td><%= problem.size %> kb</td>
+
+
+    
+    <td><%= link_to 'Edit', edit_problem_path(problem), :class =>"btn btn-mini" %></td>
+    <td><%= link_to 'Destroy', problem, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"btn btn-mini btn-danger" %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Problem', new_problem_path,  :class => 'btn' %>
+<%= paginate @problems %>
+
+<!-- <%= render 'problems/autoimport' %>        -->
+
+
+

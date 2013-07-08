@@ -1,0 +1,10 @@
+solution.run_time = time.round(1)   # round to 1 decimal to avoid rare values for CPU use...
+        solution.run_time = 0.1 if solution.run_time == 0 # at least should be 0.1
+        solution.file_size = (solution.src_file_size.to_f/1024).round(2)
+
+
+        solution.file_size_score = (solution.file_size/solution.problem.size*solution.contest.file_size_val.to_f).round(2)
+        solution.run_time_score = (solution.run_time/solution.problem.time*solution.contest.run_time_val.to_f).round(2)
+
+        solution.score =  solution.file_size_score + solution.run_time_score
+

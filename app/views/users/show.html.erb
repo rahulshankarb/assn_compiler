@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>Team Name: <%= @user.username %></p>
+<p>Person 1: <%= @user.first_person  %></p>
+<% if @user.id !=1  %>
+<p>Person 2: <%= @user.second_person  %></p>
+<!-- <p>Person 3: <%= @user.third_person %></p>	    -->
+<%end%>
+<p>Email: <%= @user.email %></p>
+<%= link_to 'Edit', edit_user_path(@user),  :class => 'btn' if current_user == @user %> 
+<%= link_to 'Back', root_path,  :class => 'btn' %>
+
+
+

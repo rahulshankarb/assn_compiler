@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+    <h1><%= @contest.name %></h1>
+    <br>
+
+
+    <div class="tabbable tabs-below">
+ 
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#A" data-toggle="tab">Resume</a></li>
+          <li class=""><a href="#B" data-toggle="tab">Positions</a></li>
+          <li class=""><a href="#C" data-toggle="tab">Submissions</a></li>
+          <li class=""><a href="#D" data-toggle="tab">Problems</a></li>
+          <li class=""><a href="#E" data-toggle="tab">Teams</a></li>
+          
+        </ul>
+
+        <div class="tab-content">
+          <div class="tab-pane active" id="A">
+            <%= render 'contests/resume' %>
+          </div>
+          
+          <div class="tab-pane" id="B">
+            <%= render 'contests/positions' %>
+          </div>
+          <div class="tab-pane" id="C">
+            <%= render 'contests/solutions' %>
+          </div>
+          <div class="tab-pane" id="D">
+            <%= render 'contests/problems' %>
+          </div>
+          <div class="tab-pane" id="E">
+            <%= render 'contests/users' %>
+          </div>
+
+
+        </div>
+      </div>
+
+
+
+<%= link_to 'Back', admin_contests_path,  :class => 'btn' %>
+
+

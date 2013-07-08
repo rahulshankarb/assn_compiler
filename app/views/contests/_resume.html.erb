@@ -1,0 +1,30 @@
+<div class="hero-unit">
+			<%= t "contests.time_remaining" %>: <div id="remaining_time"></div> 
+			<br><br><br>
+			<% if @remaining==-1 %>
+			<div class="alert">
+				<button type="button" class="close" data-dismiss="alert">×</button>
+  				<strong>Warning!</strong><br> <%= t "contests.not_started" %>
+     		    
+            </div>
+            <%end%>
+		<ul>
+			<li><%= t "contests.local_time" %>: <span id="local_time"></span> </li>
+			<li><%= t "contests.start_time" %>: <span id="start_time"><%=@contest.start_date%></span> </li>			
+			<li><%= t "contests.teams_registered" %>:  <%=@contest.users.count%></li>
+			<li><%= t "contests.problems" %> :  <%=@contest.problems.count%></li>
+			<li><%= t "contests.all_solutions" %>:  <%=@contest.solutions.count%></li>
+			<li><%= t "contests.solutions_accepted" %>:  <%=@contest.solutions.solved.count %></li>
+		</ul>
+
+
+
+		<input type="hidden" value="<%=@contest.start_date%>" id="start_date" />
+		<input type="hidden" value="<%=@contest.duration%>" id="duration" />
+		<input type="hidden" value="<%=@remaining%>" id="remaining" />
+
+		
+		
+		
+</div>
+

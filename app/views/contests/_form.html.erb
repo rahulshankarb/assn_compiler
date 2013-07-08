@@ -1,0 +1,60 @@
+<div class="row">
+  <%= simple_form_for @contest, :html => {:multipart => true, :novalidate => false} do |f| %>
+
+
+  <div class="span4">
+    <%= f.error_notification %>
+    <br>
+    <%= f.input :name, :input_html =>{:required => "required"} %>
+    <%= f.input :start_date , :as => :string ,:input_html =>{:required => "required"}%>
+    <%= f.input :duration, :placeholder => 'In hours' ,:input_html =>{:required => "required",  :class => 'input-mini', :min=>"1" , :max=>"5"}%>
+    <%= f.association :problems, as: :check_boxes, :collection => Problem.active(:order => 'title'), :label => 'Select Problems'  %>
+    <br>
+    <%= f.button :submit, :class => 'btn btn-success'%>
+    <br>
+    <br>
+  </div>
+
+  <div class="span8">
+
+    <div >
+      <h2>Contest type</h2>
+      <%= radio_button_tag("contest[acm]",true, true, :class => "maraton_type") %> ACM
+      <%= radio_button_tag("contest[acm]",false, false, :class => "maraton_type") %> Custom
+    </div>
+
+    <div id ="acm_options"> 
+    <%= f.input :penalty_val, :input_html => {:min=>"1", :max=>"60", :class => 'input-mini', :value => "20"}, :label => 'Penalty value' %>
+
+    </div>  
+
+    <div id ="custom_options">
+      <h2> <%= t "contests.Percentages_for_validation" %></h2>
+      <small class="text-warning">(<%= t "contests.make_sure_that" %>)</small>
+      <br><br>
+
+      <div  class="form-inline">
+        <%= f.input :validate, :disabled => true %>
+        <%= f.input :validate_val, :label => false, :placeholder=>"%" , :input_html => {:min=>"50", :max=>"98", :class => 'input-mini', :value => "70" }  %>
+      </div>
+
+      <div  class="form-inline">
+        <%= f.input :file_size, :disabled => true %>
+        <%= f.input :file_size_val, :label => false, :placeholder=>"%" , :input_html => {:min=>"1", :max=>"48", :class => 'input-mini', :value => "5"  }  %>
+      </div>
+
+
+
+      <div  class="form-inline">
+        <%= f.input :run_time, :disabled => true %>
+        <%= f.input :run_time_val, :label => false, :placeholder=>"%",  :input_html => { :min=>"1", :max=>"48",:class => 'input-mini', :value => "25"  } %>
+      </div>
+
+    </div>
+  </div>
+
+
+ 
+
+  <% end %>
+</div>

@@ -1,0 +1,36 @@
+<h1>Participating Teams</h1>
+
+<% if can? :manage, :all %>
+
+<table class="table table-condensed table-bordered table-striped">
+  <tr>
+    <th>Team Name</th>
+    <th>Members </th>
+    <th>Email</th>
+    <th>Delete</th>
+  </tr>
+
+<% @users.each do |user| %>
+
+  <tr>
+   <td><%= link_to user.username, user %></td>
+     <td><ul>
+            <li> <%= user.first_person if user.first_person   %> </li>
+            <li> <%= user.second_person if user.second_person %> </li>
+            <li> <%= user.third_person if user.third_person  %> </li>
+         </ul>
+     </td>
+    
+    <td><%= user.email %></td>
+    <td><%= link_to 'Delete User', user, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"btn btn-mini btn-danger" %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<!-- <%= link_to 'New Team', new_user_path,  :class => 'btn'  %>     -->
+
+<%= paginate @users%>
+
+<%end%>

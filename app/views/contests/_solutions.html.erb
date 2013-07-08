@@ -1,0 +1,58 @@
+
+
+<table class="table table-condensed table-bordered table-striped">
+  <tr>
+    <th>Id</th>
+    <th>Team</th>
+    <th>Problem</th>
+    <th>Language</th>
+    <th>Source</th>
+    
+    
+
+    <% if @contest.file_size %><th>File Size (Kb)</th> <%end%>
+    <% if @contest.memory_used %><th>Memory Usage(Kilobytes)</th> <%end%>
+    <% if @contest.run_time %><th>Run Time (Seconds)</th> <%end%>
+    
+    <th>State</th>
+    
+    
+  </tr>
+
+
+<% @contest.solutions.order("updated_at DESC").each do |solution| %>
+
+  <tr>
+    <td><%= solution.id %></td>
+    <td><%= solution.user.username %></td>
+    <td><%= solution.problem.title %></td>
+    <td><%= solution.language %></td>
+    <td><%= link_to solution.src_file_name, solution.src.url %></td>
+
+    <% if @contest.file_size %><td><%=solution.file_size%></td> <%end%>
+    <% if @contest.memory_used %><td><%=solution.memory_used%></td> <%end%>
+    <% if @contest.run_time %><td><%=solution.run_time%></td> <%end%>
+
+    
+    <% if  solution.state.acronym == "AC" %>
+    <td><span class="label label-success"><%=solution.state.name %></span></td>
+    <% elsif solution.state.acronym == "WA"%>
+    <td><span class="label label-important"><%=solution.state.name %></span></td>
+    <% elsif solution.state.acronym == "TL"%>
+    <td><span class="label label-warning"><%=solution.state.name %></span></td>
+       <% elsif solution.state.acronym == "CE"%>
+    <td><span class="label label-inverse"><%=solution.state.name %></span></td>
+    <% elsif solution.state.acronym == "UN"%>
+    <td><span class="label label-info">Judging...</span><%= image_tag('loading.gif', :width => '7%' ) %> </td>
+    <% else %>
+    <td><span class="label"><%=solution.state.name %></span></td>
+    <% end %>
+
+
+  </tr>
+<% end %>
+</table>
+
+<br/>
+
+

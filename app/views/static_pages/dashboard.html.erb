@@ -1,0 +1,75 @@
+
+
+
+<div class="row">
+    <div class="">
+     <h1><%= @contest.name %> </h1>
+     <h4><%= t "contests.time_remaining" %>:</h4> <div  id="remaining_time"></div>
+     <input type="hidden" value="<%=@remaining%>" id="remaining" />
+
+        <% if @remaining==-1 %>
+             <div class="hero-unit">
+             	
+
+             		<div class="alert">
+          		
+          		<!--	   <strong>Warning!</strong><br>                 -->
+          			   Assignment not open yet<br>
+             		   Please come back at: <%=@contest.start_date%>
+                    </div>
+             </div>
+        <%end%> 		
+        <%if @remaining==0 %>
+            <div class="hero-unit">
+            
+
+                <div class="alert alert-error">
+
+                   Assignment submissions are close<br>
+                    
+                </div>
+                <div class="hero-unit">
+                    <h2><%= t "contests.Final_Positions" %></h2>       
+                    <%= render 'contests/positions' %>
+                    <h2><%= t "contests.Judge_Solutions" %></h2>        
+                    <%= render 'contests/judge_solutions' %>
+
+                </div>
+            </div> 
+        <%end%>
+
+        <%if @remaining>0 %>
+            <%
+         	@contest.active = true;
+         	@contest.status = "start";
+            @contest.save
+         	%>
+         
+    		<div class="hero-unit">
+    		<h2>Positions</h2>    		  
+    		  		<%= render 'contests/positions' %>
+    		</div>	
+
+    		<div class="hero-unit">
+    		      <h2>My Submissions</h2>
+    			    <%= render 'solutions/mySolutions' %>
+    		        <%= render 'solutions/form' %>
+    		</div>
+    			    
+    		<%= link_to 'Cancel Register', unregister_path(@contest),  :class => 'btn btn-inverse', data: { confirm: 'Are you sure?' } %>
+
+
+            
+    		 
+    	    </div>
+    	  </div>
+	  <%end%>
+    </div>
+
+      <%= subscribe_to "/contest/#{@contest.id}/user/#{current_user.id}" %>
+
+
+      <!--   <%= render 'static_pages/private_pub' %>          -->
+
+
+

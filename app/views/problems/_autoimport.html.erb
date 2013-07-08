@@ -1,0 +1,37 @@
+	<%= form_tag 'problems/autoimport' do %>
+<a id="autoImport" href="#myModal" role="button" class="btn btn-info" data-toggle="modal">Auto Import</a>
+
+<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<h3 id="myModalLabel">Auto Import</h3>
+	</div>
+	<div class="modal-body">
+		<div class="fields-modal">
+		</p>
+
+
+
+	<%= label_tag 'Folder with problems' %>
+  <%= text_field_tag 'path', nil, :placeholder => 'Enter absolute path of the folder' %>
+
+	<%= label_tag 'time in seconds' %>
+  <%= number_field_tag 'time', nil, :in => 1..10, value: 5 %>
+
+  <%= label_tag 'size in KB' %>
+  <%= number_field_tag 'size', nil, :in => 100..1000, value: 500 %>
+		</div>
+		<div class="help-modal"
+>
+			<%= link_to image_tag('help.png',size: "40x40"), "https://github.com/edymerchk/Verifier/wiki/AutoImport
+" %>
+
+		</div>
+
+	</div>
+	<div class="modal-footer">
+		<%= submit_tag 'Save',  :class => 'btn btn-primary' %>
+		<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+	</div>
+	<% end %>
+

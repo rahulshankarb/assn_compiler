@@ -1,0 +1,41 @@
+<h1>Assignments</h1>
+
+<table class="table table-condensed table-bordered table-striped">
+  <tr>
+    <th><%= t "contests.name" %></th>
+    <th><%= t "contests.start_date" %></th>
+    <th><%= t "contests.duration" %></th>
+ <!--   <th><%= t "contests.type" %></th>
+    <th><%= t "contests.state" %></th>                    -->
+    <th><%= t "contests.action" %></th>
+   
+
+  </tr>
+
+<% @contests.each do |contest| %>
+  <tr>
+    <td><%= contest.name %></td>
+    <td><%= contest.start_date  %></td>
+    <td><%= contest.duration %> hours</td>
+<!--    <td><%= contest.type %></td>
+    <td><%= contest.status %></td>                    -->
+    <td>
+    <% if contest.is_registered?(current_user)%>
+    <%=  link_to "Enter", dashboard_path(contest),  :class => 'btn btn-success' if contest.is_registered?(current_user) %>
+     <% else if !(contest.is_registered?(current_user))  %> 
+     <%= link_to 'Register', register_path(contest),  :class => 'btn btn-info', data: { confirm: 'Are you sure?' } %>
+     <% else %> 
+      <span><%= t "contests.wait_msg" %></span>
+     <% end %>
+  <% end %>
+    </td>
+   
+    
+
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+

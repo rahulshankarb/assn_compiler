@@ -1,0 +1,22 @@
+<table class="table table-condensed table-bordered table-striped">
+  <tr>
+        <th><%= t "contests.team_name" %></th>
+    <th><%= t "contests.email" %></th>
+    <th><%= t "contests.members" %></th>
+
+  </tr>
+
+<% @contest.users.each do |user| %>
+  <tr>
+    <td><%= link_to user.username, user %></td>
+    <td><%= user.email %></td>
+    <td><ul>
+            <li> <%= user.first_person if user.first_person   %> </li>
+            <li> <%= user.second_person if user.second_person %> </li>
+            <li> <%= user.third_person if user.third_person  %> </li>
+         </ul>
+     </td>
+
+  </tr>
+<% end %>
+</table>

@@ -1,0 +1,15 @@
+<table class="table table-condensed table-bordered table-striped">
+	  	<tr>
+	  		<th>Username</th>
+	  		<% @contest.problems.each do |problem| %>
+	  			<th><%= link_to problem.title,  problem.body.url %></th>
+	  		<% end %>
+	  	</tr>
+	  	<% @contest.users.each do |user| %>
+	  	<tr>
+	  		
+	  			<td><%= user.username %></td>
+	  		
+	  	</tr>
+	  	<% end %>
+</table>

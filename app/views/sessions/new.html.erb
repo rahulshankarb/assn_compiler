@@ -1,0 +1,29 @@
+<div class="login-form">
+        <legend><%=t "general.Login" %></legend>
+        <fieldset >
+          <%= form_for(:session, url: sessions_path) do |f| %>
+            <div class="control-group">
+              <label class="control-label" ><%= t "general.Username" %></label>
+              <div class="controls">
+                <%= f.text_field :username, :placeholder => 'Username', :class => '.input-large', required: "required"  %>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label" ><%= t "general.Password" %></label>
+              <div class="controls">
+                <%= f.password_field :password, :placeholder => 'Password', :class => '.input-large', required: "required"  %>
+              </div>
+            </div>
+            <%= f.submit "Enter", class: "btn btn-large btn-primary" %>
+        <% end %>
+        </fieldset>
+        <%= link_to "Register", new_user_path %>
+
+      
+
+
+
+</div>
+
+

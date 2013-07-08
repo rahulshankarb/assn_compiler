@@ -1,0 +1,93 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+# <%= t "contests.name" %>
+es:
+  general: #<%= t "general.edit" %>
+   enter: Entrar
+   register: Registrar
+   back: Atras
+   edit: Editar
+   delete: Borrar
+   admin: Admin
+   are_you_sure: Estas Seguro?
+   Login: Login
+   Username: Nombre de Usuario
+   Password: Clave
+   Contests: Maratones
+   Register: Registrar
+   Team_Name: Nombre de Equipo
+   Person: Persona
+   Listing_Teams: Listado de Equipos
+   Members: Miembro
+   Editing_Admin_Account: Editar cuenta Admin
+   Editing_Team: Editando Equipo
+  about:
+   title: 'Acerca de Verifier'
+   description: 'Verifier es un juez online resultado de un proyecto de investigacion del Politecnico Jaime Isaza Cadavid, realiza validaciones en algoritmos de tipo maratones de programacion  siguiendo los estandares de la ACM-ICPC. Aparte de esto, ofrece la posibilidad de calificar un algoritmo basado en 3 metricas:'
+   metric1: Validez
+   metric2: Tiempo de ejecucion
+   metric3: Tamaño de archivo fuente
+   foot: "El proyecto fue desarrollado por:"
+   author: Juan Pablo Cano y Luis Edimerchk Laverde
+   advisedby: Asesorados por Sandra P. Mateus Santiago
+  contests: # <%= t "contests.xxx" %>
+   new: Nueva Maraton
+   name: Nombre
+   start_date: Fecha de Inicio
+   duration: Duracion
+   active: Activo
+   problems: Problemas
+   teams: Equipos
+   state: Estado
+   action: Accion
+   wait_msg: Espere por la hora de inicio
+   status: Estado
+   problems: Problemas
+   teams_registered: Equipos Registrados
+   admin_contests: Adinistrar Maratones
+   team_name: Nombre Equipo
+   email: Email
+   members: Miembros
+   team: Equipo
+   problem: Problema
+   language: Lenguage
+   source: Fuente
+   time_remaining: Tiempo Restante
+   not_started: "La maraton aun no ha empezado..."
+   local_time: Hora Local
+   start_time: Hora de inicio
+   teams_registered: Equipos Registrados
+   all_solutions: Todas las soluciones
+   solutions_accepted: Soluciones Aceptadas
+   Percentages_for_validation: Porcentajes para validacion
+   make_sure_that: Asegurese que la suma de todos los porcentajes sea 100
+   Place: Lugar
+   Total_Solved: Total Resultos
+   Title: Titulo
+   Body: Cuerpo
+   Input: Entrada
+   Output: Salida
+   Time_Limit: Tiempo Limite
+   Judge_File_Size: Tamaño Archivo Juez
+   Local_Time: Hora local
+   Time_Elapsed: Tiempo Transcurrido
+   File_Size: Tamaño de archivo
+   Memory_Usage: Uso de memoria
+   Run_Time: "Tiempo de ejecucion (Segundos)"
+   Acronym: Acronimo
+   Listing_states: Lista de Estados 
+   Please_comeback_at: Por favor regrese a las
+   The_contest_is_over: La maraton ha terminado...
+   Final_Positions: Posiciones finales
+   Judge_Solutions: Solucion de los jueces
+   My_Submissions: Mis Soluciones
+   type: Tipo
+  problems: # <%= t "problems.xxx" %>
+   Listing_problems: Listado de Problemas
+   Title: Titulo
+   Body: Cuerpo
+   Input: Entrada
+   Output: Salida
+   New_problem: Nuevo Problema
+  solutions: # <%= t "solutions.xxx" %>
+   New_Submission: Nueva Solucions

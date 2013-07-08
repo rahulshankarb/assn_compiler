@@ -1,0 +1,62 @@
+
+<html>
+  <head>
+
+    
+    <style type="text/css">
+    #logo{
+      float: right;
+    }
+    #ppal{
+      height: 200px;
+
+    }
+    #title{
+      float: left;
+       margin: 70px;
+
+    }
+    #contest{
+      color: #08C;      
+    }
+
+
+
+
+    </style>
+     <%= wicked_pdf_stylesheet_link_tag('bootstrap_and_overrides') %>
+   
+
+  </head>
+  <body >
+     
+    
+
+    <div id="content">
+      <div id="title"><h1>Verifier Judge</h1></div>
+      <br>
+      <div class="hero-unit">
+        <div id="contest"> <h2><%=@contest.name %></h2></div>
+          
+          
+          
+                    <%= render 'contests/positions' %>
+
+      </div>
+   
+    </div>
+
+    <footer class="footer">
+  <br><br><br><br>
+
+
+
+    
+
+ 
+    <%= Time.now.strftime("Exported on %m/%d/%Y at %I:%M%p") %>
+    
+  
+</footer>
+  </body>
+</html>

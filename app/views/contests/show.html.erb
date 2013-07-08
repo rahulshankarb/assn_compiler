@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+    <p>Name: <%= @contest.name %></p>    
+    <p>Start date: <%= @contest.start_date.strftime("%I:%M%p")  %></p>
+    
+    <p>Duration: <%= @contest.duration %> hours</p>
+ <!--   <p>Active: <%= @contest.active? %></p>          -->
+    <p>Problems:
+    	<ul>
+        <%@contest.problems.each do |problem|%>
+            <li> <%= problem.title %> </li>
+        
+       <% end %>
+        </ul>
+     </p>
+      <p>Teams:
+      	<ul>
+        <%@contest.users.each do |user|%>
+            <li> <%= user.username %> </li>
+        
+       <% end %>
+        </ul>
+     </p>
+
+     
+
+
+
+<%= link_to 'Back', admin_contests_path,  :class => 'btn' %>
+
+
+
